@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/domain/cat/search_cat_use_case.dart';
 import 'package:flutter_template/presentation/base/exceptions/unhandled_effect_exception.dart';
 import 'package:flutter_template/presentation/base/page/base_page.dart';
 import 'package:flutter_template/presentation/base/widgets/snackbar/snackbar.dart';
@@ -8,11 +9,23 @@ import 'package:flutter_template/presentation/destinations/weather/search/search
 import 'package:flutter_template/presentation/destinations/weather/search/widgets/search_page_body/search_page_body.dart';
 import 'package:flutter_template/presentation/entity/effect/effect.dart';
 import 'package:flutter_template/presentation/entity/screen/screen.dart';
+import 'package:get_it/get_it.dart';
 
 class SearchPage extends StatelessWidget {
   final SearchScreen searchScreen;
 
-  const SearchPage({Key? key, required this.searchScreen}) : super(key: key);
+  SearchPage({
+    Key? key,
+    required this.searchScreen,
+  }) : super(key: key) {
+    // CatRemoteServiceImpl().searchCat(searchTerm: 'Sib').then(
+    //       (value) => print(
+    //         value.toString(),
+    //       ),
+    //     );
+
+    // GetIt.I.get<SearchCatUseCase>().call(param: 'Sib');
+  }
 
   @override
   Widget build(BuildContext context) {
