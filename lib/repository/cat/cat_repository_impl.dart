@@ -3,9 +3,8 @@ import 'package:flutter_template/services/cat/remote/cat_remote_service.dart';
 import 'package:flutter_template/services/entity/cat/remote/remote_cat.dart';
 
 class CatRepositoryImpl implements CatRemoteService {
-  late final CatRemoteService catRemoteService;
-
-  late final DomainCatMapper domainCatMapper;
+  final CatRemoteService catRemoteService;
+  final DomainCatMapper domainCatMapper;
 
   CatRepositoryImpl({
     required this.catRemoteService,
@@ -17,6 +16,6 @@ class CatRepositoryImpl implements CatRemoteService {
     final results = await catRemoteService.searchCat(
       searchTerm: searchTerm,
     );
-    return domainCatMapper.map(results);
+    return results;
   }
 }
