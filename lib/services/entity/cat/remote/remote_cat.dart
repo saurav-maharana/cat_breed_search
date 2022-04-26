@@ -9,7 +9,6 @@ class RemoteCat {
   final String id;
   final String name;
   final String origin;
-  @JsonKey(name: 'country_codes')
   RemoteCat({
     required this.id,
     required this.name,
