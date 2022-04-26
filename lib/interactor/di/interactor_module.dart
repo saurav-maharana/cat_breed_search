@@ -6,6 +6,7 @@ import 'package:flutter_template/interactor/weather/search/city_search_result_ma
 import 'package:flutter_template/interactor/weather/search/search_city_interactor.dart';
 import 'package:flutter_template/interactor/weather/search/search_city_interactor_impl.dart';
 import 'package:flutter_template/interactor/weather/search/ui_city_mapper.dart';
+// import 'package:flutter_template/repository/cat/domain_cat_mapper.dart';
 import 'package:get_it/get_it.dart';
 
 extension InteractorModule on GetIt {
@@ -42,5 +43,7 @@ extension InteractorModule on GetIt {
               uiCityMapper: get(),
               weatherListMapper: get(),
             ));
+
+    // registerFactory<DomainCatMapper>(() => DomainCatMapperImpl());
   }
 }
