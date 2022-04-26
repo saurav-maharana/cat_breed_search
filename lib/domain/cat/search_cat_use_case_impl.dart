@@ -3,7 +3,7 @@ import 'package:flutter_template/repository/cat/cat_repository.dart';
 import 'package:flutter_template/services/entity/cat/remote/remote_cat.dart';
 
 class SearchCatUseCaseImpl extends SearchCatUseCase {
-  late final CatRepository catRepository;
+  final CatRepository catRepository;
 
   SearchCatUseCaseImpl({
     required this.catRepository,
