@@ -58,7 +58,7 @@ extension RepositoryModule on GetIt {
     registerLazySingleton<CatRepository>(
       () => CatRepositoryImpl(
         catRepository: get(),
-        domainCatMapper: get(),
+        catRemoteService: get(),
       ),
     );
   }
