@@ -5,3 +5,9 @@ final remoteCat1 = RemoteCat(
   name: 'Siberia',
   origin: 'Russia',
 );
+
+final remoteCat2 = RemoteCat(
+  id: "ger",
+  name: "Toyger",
+  origin: "United States",
+);
