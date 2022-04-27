@@ -1,7 +1,5 @@
-import 'package:drift/remote.dart';
 import 'package:flutter_template/domain/entity/cat/cat.dart';
 import 'package:flutter_template/repository/cat/domain_cat_mapper.dart';
-import 'package:flutter_template/services/entity/cat/remote/remote_cat.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
