@@ -11,3 +11,8 @@ final remoteCat2 = RemoteCat(
   name: "Toyger",
   origin: "United States",
 );
+
+final allCatList = [
+  remoteCat1,
+  remoteCat2,
+];
