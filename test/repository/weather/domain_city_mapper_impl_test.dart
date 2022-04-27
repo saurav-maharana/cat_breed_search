@@ -61,7 +61,7 @@ void main() {
 
   test(
     "Given remote city, When map remote city called, Then city is returned",
-        () {
+    () {
       // Given
       const remoteCityData = remoteCity1;
       final city = city1;
@@ -80,7 +80,7 @@ void main() {
 
   test(
     "Given local city data list, When map list called, Then city list is returned",
-        () {
+    () {
       // Given
       const remoteCityList = allRemoteCityList;
       final cityList = allCityList;
