@@ -1,5 +1,5 @@
-import 'package:flutter_template/services/entity/cat/remote/remote_cat.dart';
+import 'package:flutter_template/domain/entity/cat/cat.dart';
 
 abstract class CatRepository {
-  Future<List<RemoteCat>> searchCat(String searchTerm);
+  Future<List<Cat>> searchCat(String searchTerm);
 }
