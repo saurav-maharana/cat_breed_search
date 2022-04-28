@@ -59,6 +59,7 @@ extension RepositoryModule on GetIt {
       () => CatRepositoryImpl(
         catRepository: get(),
         catRemoteService: get(),
+        domainCatMapper: get(),
       ),
     );
   }
