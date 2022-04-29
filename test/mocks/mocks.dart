@@ -4,6 +4,7 @@ import 'package:flutter_template/navigation/weather/search/search_navigator.dart
 import 'package:flutter_template/presentation/base/intent/intent_handler.dart';
 import 'package:flutter_template/presentation/entity/intent/intent.dart';
 import 'package:flutter_template/repository/cat/cat_repository.dart';
+import 'package:flutter_template/repository/cat/domain_cat_mapper.dart';
 import 'package:flutter_template/repository/date/date_repository.dart';
 import 'package:flutter_template/repository/weather/domain_city_mapper.dart';
 import 'package:flutter_template/repository/weather/domain_weather_mapper.dart';
@@ -34,7 +35,7 @@ class MockLocalWeatherMapper extends Mock implements LocalWeatherMapper {}
 
 class MockLocalDayWeatherMapper extends Mock implements LocalDayWeatherMapper {}
 
-class MockDomainCatMapper extends Mock implements DomainCityMapper {}
+class MockDomainCatMapper extends Mock implements DomainCatMapper {}
 
 // Repositories
 class MockDateRepository extends Mock implements DateRepository {}
