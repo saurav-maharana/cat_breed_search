@@ -7,7 +7,6 @@ import 'package:flutter_template/interactor/cat/search/search_cat_interactor.dar
 
 class SearchCatInteractorImpl extends SearchCatInteractor {
   late final SearchCatUseCase searchCatUseCase;
-  final List cats = [];
 
   final StreamController<List<Cat>> _streamController = StreamController();
 
