@@ -12,7 +12,7 @@ class SearchCatInteractorImpl extends SearchCatInteractor {
   final StreamController<List<Cat>> _streamController = StreamController();
 
   @override
-  Future<void> seatch(String searchTerm) async {
+  Future<void> search(String searchTerm) async {
     final searchResults = await searchCatUseCase(param: searchTerm);
 
     searchResults.when(
