@@ -1,3 +1,3 @@
 abstract class SearchCatInteractor {
-  Future<void> seatch(String searchTerm);
+  Future<void> search(String searchTerm);
 }
