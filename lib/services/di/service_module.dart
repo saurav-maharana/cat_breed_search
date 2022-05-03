@@ -1,5 +1,7 @@
 import 'package:flutter_template/services/base/database/app_database.dart';
 import 'package:flutter_template/services/base/di/dio_provider.dart';
+import 'package:flutter_template/services/cat/remote/cat_remote_service.dart';
+import 'package:flutter_template/services/cat/remote/cat_remote_service_impl.dart';
 import 'package:flutter_template/services/weather/local/weather_local_service.dart';
 import 'package:flutter_template/services/weather/local/weather_local_service_impl.dart';
 import 'package:flutter_template/services/weather/remote/weather_remote_service.dart';
@@ -23,6 +25,11 @@ extension ServiceModule on GetIt {
 
     registerLazySingleton<WeatherLocalService>(
       () => WeatherLocalServiceImpl(get()),
+    );
+
+    // Cat API
+    registerLazySingleton<CatRemoteService>(
+      () => CatRemoteServiceImpl(),
     );
   }
 }

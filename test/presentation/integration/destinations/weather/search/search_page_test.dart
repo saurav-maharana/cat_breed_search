@@ -45,7 +45,7 @@ void main() {
 
   _loadPage(WidgetTester tester) async {
     await tester.loadPage(
-      widget: const SearchPage(searchScreen: SearchScreen()),
+      widget: SearchPage(searchScreen: const SearchScreen()),
       viewModelProvider: searchViewModelProvider,
       fakeViewModelProvider: _fakeSearchViewModelProvider,
     );
@@ -59,8 +59,7 @@ void main() {
 
     // Then
     expect(find.byType(TextField), findsOneWidget);
-    expect(find.text(LocaleKeys.searchResultsAppearHere),
-        findsOneWidget);
+    expect(find.text(LocaleKeys.searchResultsAppearHere), findsOneWidget);
     expect(find.byType(SearchPageLoadingShimmer), findsNothing);
   });
 
@@ -76,8 +75,7 @@ void main() {
 
     // Then
     expect(find.byType(TextField), findsOneWidget);
-    expect(
-        find.text(LocaleKeys.searchResultsAppearHere), findsNothing);
+    expect(find.text(LocaleKeys.searchResultsAppearHere), findsNothing);
     expect(find.byType(SearchPageLoadingShimmer), findsOneWidget);
   });
 
@@ -108,8 +106,7 @@ void main() {
 
     // Then
     expect(find.byType(TextField), findsOneWidget);
-    expect(
-        find.text(LocaleKeys.searchResultsAppearHere), findsNothing);
+    expect(find.text(LocaleKeys.searchResultsAppearHere), findsNothing);
     expect(find.byType(SearchPageLoadingShimmer), findsNothing);
     expect(find.text(LocaleKeys.noResultsFound), findsOneWidget);
   });

@@ -1,3 +1,6 @@
+import 'package:flutter_template/repository/cat/cat_repository.dart';
+import 'package:flutter_template/repository/cat/cat_repository_impl.dart';
+import 'package:flutter_template/repository/cat/domain_cat_mapper.dart';
 import 'package:flutter_template/repository/date/date_mapper.dart';
 import 'package:flutter_template/repository/date/date_repository.dart';
 import 'package:flutter_template/repository/date/date_repository_impl.dart';
@@ -48,5 +51,16 @@ extension RepositoryModule on GetIt {
           localDayWeatherMapper: get(),
           dateRepository: get(),
         ));
+
+    // cat
+    registerFactory<DomainCatMapper>(() => DomainCatMapperImpl());
+
+    registerLazySingleton<CatRepository>(
+      () => CatRepositoryImpl(
+        catRepository: get(),
+        catRemoteService: get(),
+        domainCatMapper: get(),
+      ),
+    );
   }
 }
