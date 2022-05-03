@@ -73,4 +73,19 @@ void main() {
     verify(() => catRemoteService.searchCat(searchTerm: 'ABC')).called(1);
     verifyZeroInteractions(domainCatMapper);
   });
+
+  test('if no cat result is found, return empty list.', () async {
+    // Given
+    when(() => catRemoteService.searchCat(searchTerm: ''))
+        .thenAnswer((_) => Future.value(List.empty()));
+
+    when(() => domainCatMapper.mapList(List.empty())).thenReturn(List.empty());
+
+    // When
+    await catRepository.searchCat('');
+
+    // Then
+    verify(() => catRemoteService.searchCat(searchTerm: '')).called(1);
+    verify(() => domainCatMapper.mapList(List.empty())).called(1);
+  });
 }
