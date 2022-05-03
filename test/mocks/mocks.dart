@@ -1,3 +1,4 @@
+import 'package:flutter_template/interactor/cat/search/search_cat_interactor.dart';
 import 'package:flutter_template/interactor/weather/favorite/favorite_weather_interactor.dart';
 import 'package:flutter_template/interactor/weather/search/search_city_interactor.dart';
 import 'package:flutter_template/navigation/weather/search/search_navigator.dart';
@@ -49,6 +50,8 @@ class MockFavoriteWeatherInteractor extends Mock
     implements FavoriteWeatherInteractor {}
 
 class MockSearchCityInteractor extends Mock implements SearchCityInteractor {}
+
+class MockCatSearchInteractor extends Mock implements SearchCatInteractor {}
 
 // Navigator
 class MockSearchNavigator extends Mock implements SearchNavigator {}
