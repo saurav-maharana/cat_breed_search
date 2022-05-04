@@ -6,16 +6,22 @@ import 'package:flutter_template/interactor/cat/search/search_cat_interactor.dar
 
 class SearchCatInteractorImpl extends SearchCatInteractor {
   late final SearchCatUseCase searchCatUseCase;
-  List<Cat> searchCatResult = [];
+  final List<Cat> _searchCatResult = [];
 
   @override
   Future<void> search(String searchTerm) async {
     final searchResults = await searchCatUseCase(param: searchTerm);
 
     searchResults.when(
-      success: ((data) => searchCatResult.add(data as Cat)),
+      success: ((data) {
+        _searchCatResult.clear();
+        _searchCatResult.addAll(data);
+      }),
       error: ((e) => log.e(
           "Search Cat Implemetation: Search $searchTerm returned error. $e")),
     );
   }
+
+  @override
+  List<Cat> get searchCatResults => _searchCatResult;
 }
