@@ -5,8 +5,10 @@ import 'package:flutter_template/foundation/logger/logger.dart';
 import 'package:flutter_template/interactor/cat/search/search_cat_interactor.dart';
 
 class SearchCatInteractorImpl extends SearchCatInteractor {
-  late final SearchCatUseCase searchCatUseCase;
+  final SearchCatUseCase searchCatUseCase;
   final List<Cat> _searchCatResult = [];
+
+  SearchCatInteractorImpl({required this.searchCatUseCase});
 
   @override
   Future<void> search(String searchTerm) async {
