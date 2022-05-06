@@ -45,7 +45,7 @@ void main() {
 
   _loadPage(WidgetTester tester) async {
     await tester.loadPage(
-      widget: SearchPage(searchScreen: const SearchScreen()),
+      widget: const SearchPage(searchScreen: SearchScreen()),
       viewModelProvider: searchViewModelProvider,
       fakeViewModelProvider: _fakeSearchViewModelProvider,
     );

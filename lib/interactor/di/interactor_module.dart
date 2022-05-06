@@ -1,3 +1,5 @@
+import 'package:flutter_template/interactor/cat/search/search_cat_interactor.dart';
+import 'package:flutter_template/interactor/cat/search/search_cat_interactor_impl.dart';
 import 'package:flutter_template/interactor/weather/favorite/favorite_weather_interactor.dart';
 import 'package:flutter_template/interactor/weather/favorite/favorite_weather_interactor_impl.dart';
 import 'package:flutter_template/interactor/weather/favorite/ui_day_weather_mapper.dart';
@@ -42,5 +44,11 @@ extension InteractorModule on GetIt {
               uiCityMapper: get(),
               weatherListMapper: get(),
             ));
+
+    registerFactory<SearchCatInteractor>(
+      () => SearchCatInteractorImpl(
+        searchCatUseCase: get(),
+      ),
+    );
   }
 }

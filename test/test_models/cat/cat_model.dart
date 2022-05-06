@@ -16,3 +16,7 @@ List<Cat> allCats = [
   cat1,
   cat2,
 ];
+
+final singleCatList = [
+  cat1,
+];
