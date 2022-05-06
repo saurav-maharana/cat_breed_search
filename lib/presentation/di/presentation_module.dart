@@ -1,3 +1,5 @@
+import 'package:flutter_template/presentation/destinations/cat/search/search_screen_view_model.dart';
+import 'package:flutter_template/presentation/destinations/cat/search/search_screen_view_model_impl.dart';
 import 'package:flutter_template/presentation/destinations/weather/home/home_view_model.dart';
 import 'package:flutter_template/presentation/destinations/weather/home/home_view_model_impl.dart';
 import 'package:flutter_template/presentation/destinations/weather/search/search_view_model.dart';
@@ -22,5 +24,13 @@ extension PresentationModule on GetIt {
         favoriteWeatherInteractor: get(),
       ),
     );
+
+    // search CAT
+    registerFactory<CatSearchViewModel>(() {
+      return CatSearchViewModelImpl(
+        searchCatInteractor: get(),
+        searchNavigator: get(),
+      );
+    });
   }
 }
