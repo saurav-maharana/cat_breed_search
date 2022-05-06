@@ -2,7 +2,6 @@ import 'package:flutter_template/interactor/cat/search/search_cat_interactor.dar
 import 'package:flutter_template/navigation/weather/search/search_navigator.dart';
 import 'package:flutter_template/presentation/destinations/cat/search/search_screen_state.dart';
 import 'package:flutter_template/presentation/destinations/cat/search/search_screen_view_model.dart';
-import 'package:flutter_template/presentation/entity/base/ui_list_item.dart';
 import '../../../entity/base/ui_toolbar.dart';
 
 class CatSearchViewModelImpl extends CatSearchViewModel {
@@ -28,11 +27,12 @@ class CatSearchViewModelImpl extends CatSearchViewModel {
   onInit() {
     setState((state) => state.copyWith(showLoading: true));
     searchCatInteractor.search('Sib').then((_) => {
-          state.copyWith(
-            showLoading: false,
-            searchList:
-                searchCatInteractor.searchCatResults as List<UIListItem>,
-          ),
+          setState((state) {
+            return state.copyWith(
+              showLoading: false,
+              searchList: searchCatInteractor.searchCatResults,
+            );
+          }),
         });
   }
 
