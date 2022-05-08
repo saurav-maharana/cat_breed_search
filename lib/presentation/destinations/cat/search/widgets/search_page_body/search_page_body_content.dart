@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class CatSearchPageBodyContent extends StatelessWidget {
   final String searchHint;
   final Widget child;
+  final TextEditingController textController;
 
   const CatSearchPageBodyContent({
     Key? key,
     required this.searchHint,
     required this.child,
+    required this.textController,
   }) : super(key: key);
 
   @override
@@ -18,7 +20,7 @@ class CatSearchPageBodyContent extends StatelessWidget {
         direction: Axis.vertical,
         children: [
           TextField(
-            controller: null,
+            controller: textController,
             decoration: InputDecoration(
               border: const OutlineInputBorder(),
               labelText: searchHint,
