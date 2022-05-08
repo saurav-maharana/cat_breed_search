@@ -1,5 +1,6 @@
 import 'package:flutter_template/interactor/cat/search/search_cat_interactor.dart';
 import 'package:flutter_template/navigation/weather/search/search_navigator.dart';
+import 'package:flutter_template/presentation/destinations/cat/search/search_screen_intent.dart';
 import 'package:flutter_template/presentation/destinations/cat/search/search_screen_state.dart';
 import 'package:flutter_template/presentation/destinations/cat/search/search_screen_view_model.dart';
 import '../../../entity/base/ui_toolbar.dart';
@@ -38,4 +39,15 @@ class CatSearchViewModelImpl extends CatSearchViewModel {
 
   @override
   String get searchTerm => _searchTerm;
+
+  @override
+  void onIntent(SearchScreenIntent intent) {
+    intent.when(
+      search: (newSearchTerm) {
+        if (newSearchTerm != searchTerm) {
+          searchCatInteractor.search(_searchTerm);
+        }
+      },
+    );
+  }
 }
