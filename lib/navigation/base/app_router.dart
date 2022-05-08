@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/entity/screen/screen.dart';
 import 'package:flutter_template/presentation/destinations/weather/home/home_page.dart';
 import 'package:flutter_template/presentation/destinations/weather/search/search_page.dart';
+import 'package:flutter_template/presentation/destinations/cat/search/search_page.dart';
 
 part 'app_router.gr.dart';
 

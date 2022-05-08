@@ -12,18 +12,10 @@ import 'package:flutter_template/presentation/entity/screen/screen.dart';
 class SearchPage extends StatelessWidget {
   final SearchScreen searchScreen;
 
-  SearchPage({
+  const SearchPage({
     Key? key,
     required this.searchScreen,
-  }) : super(key: key) {
-    // CatRemoteServiceImpl().searchCat(searchTerm: 'Sib').then(
-    //       (value) => print(
-    //         value.toString(),
-    //       ),
-    //     );
-
-    // GetIt.I.get<SearchCatUseCase>().call(param: 'Sib');
-  }
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
